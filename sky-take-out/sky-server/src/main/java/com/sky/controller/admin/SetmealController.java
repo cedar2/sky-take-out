@@ -82,4 +82,18 @@ public class SetmealController {
         return Result.success(setmealVO);
     }
 
+    /**
+     * 修改套餐和关联菜品
+     *
+     * @param setmealDTO
+     * @return
+     */
+    @PutMapping
+    @ApiOperation(value = "修改套餐和关联菜品")
+    public Result update(@RequestBody SetmealDTO setmealDTO) {
+        log.info("修改套餐和关联菜品：{}", setmealDTO);
+        setmealService.update(setmealDTO);
+        return Result.success();
+    }
+
 }
